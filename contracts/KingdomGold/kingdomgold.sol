@@ -74,8 +74,8 @@ contract KingDomGold is ERC20Interface, SafeMath {
     string public  name;
     uint8 public decimals;
     uint public _totalSupply;
-    // address owner = 0x5C8466817359c080Ca8A429782C3ca79f91F8B3b;
-    address owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    address owner = 0x5C8466817359c080Ca8A429782C3ca79f91F8B3b;
+    // address owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
 
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
