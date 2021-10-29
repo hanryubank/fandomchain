@@ -1,13 +1,13 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.26;
 
 // ----------------------------------------------------------------------------
 // Main token contract
 //
 // Symbol        : KDG
 // Name          : KingDomGold
-// Total supply  : 100.000.000.000
+// Total supply  : 100,000,000,000
 // Decimals      : 18
-// Owner Account : 0x5c8466817359c080ca8a429782c3ca79f91f8b3b
+// Owner Account : 0xdc0F8E2F879e4e2678220e8659AE998540B8005F
 //
 // Enjoy.
 //
@@ -74,8 +74,7 @@ contract KingDomGold is ERC20Interface, SafeMath {
     string public  name;
     uint8 public decimals;
     uint public _totalSupply;
-    address owner = 0x5C8466817359c080Ca8A429782C3ca79f91F8B3b;
-    // address owner = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
+    address owner = 0xdc0F8E2F879e4e2678220e8659AE998540B8005F; // owner
 
     mapping(address => uint) balances;
     mapping(address => mapping(address => uint)) allowed;
@@ -84,7 +83,7 @@ contract KingDomGold is ERC20Interface, SafeMath {
     // ------------------------------------------------------------------------
     // Constructor
     // ------------------------------------------------------------------------
-    function KingDomGold() public {
+    constructor() public {
         symbol = "KDG";
         name = "KingDom Gold";
         decimals = 18;
@@ -92,7 +91,7 @@ contract KingDomGold is ERC20Interface, SafeMath {
         balances[owner] = _totalSupply;
         emit Transfer(address(0), owner, _totalSupply);
     }
-
+    
 
     // ------------------------------------------------------------------------
     // Total supply

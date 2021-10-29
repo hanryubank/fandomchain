@@ -1,54 +1,55 @@
 ====== BUILD ======
-cd $HOME/blockchain-renew
+cd $HOME/fandomchain
 make all
 
 ====== SET ALIAS ======
-alias fandom=$HOME/blockchain-renew/build/bin/fandom
-alias bootnode=$HOME/blockchain-renew/build/bin/bootnode
-alias puppeth=$HOME/blockchain-renew/build/bin/puppeth
+alias fandom=$HOME/fandomchain/build/bin/fandom
+alias bootnode=$HOME/fandomchain/build/bin/bootnode
+alias puppeth=$HOME/fandomchain/build/bin/puppeth
 
 ====== CREATE PASSWORD FILE ======
-echo "123456" > password.txt
+echo "1111111" > password.txt
 
 ====== CREATE FOLDER STRUCTURE
-mkdir -p $HOME/fandom/keystore/1
-mkdir -p $HOME/fandom/keystore/2
-mkdir -p $HOME/fandom/keystore/3
+mkdir -p /fandom/keystore/1
+mkdir -p /fandom/keystore/2
+mkdir -p /fandom/keystore/3
 
 ====== CREATE ACCOUNTS ======
 
 fandom account new \
 --password password.txt \
---keystore $HOME/fandom/keystore/1
+--keystore /fandom/keystore/1
 
 fandom account new \
 --password password.txt \
---keystore $HOME/fandom/keystore/2
+--keystore /fandom/keystore/2
 
 fandom account new \
 --password password.txt \
---keystore $HOME/fandom/keystore/3
+--keystore /fandom/keystore/3
 
 5c8466817359c080ca8a429782c3ca79f91f8b3b
 7df2d6bb7ac5161e181d32b3ba3ce6a7b0d68a4a
 b67c637fbf846445852e87ba6d7ee9fe9e974090
 
 ====== GENERATE GENESIS BLOCK ======
+// Deposit 10M KDC (10000000 KDC)
 
-1500000000 KDC/year = 10512000 blocks = 11680 epochs
-=> 128424 KDC/epoch
-
+300000000 KDC/year = 10512000 blocks = 11680 epochs
+=> 25684 KDC/epoch
+   
 Year by year reward:
-1st: 128424
-2nd: 128424
-3rd: 85616
-4th: 85616
-5th: 64212
-6th: 64212
-7th: 42808
-8th: 42808
+1st: 25684
+2nd: 25684
+3rd: 17122
+4th: 17122
+5th: 12842
+6th: 12842
+7th: 8560
+8th: 8560
 >=
-9th: 21404
+9th: 4280
 
 puppeth
 
@@ -58,9 +59,9 @@ kingdomgold contract is: 0000000000000000000000000000000000000010
 
 ====== INIT GENESIS BLOCK TO DB PATH ======
 
-fandom --datadir $HOME/fandom/nodes/1 init fandomchain.json
-fandom --datadir $HOME/fandom/nodes/2 init fandomchain.json
-fandom --datadir $HOME/fandom/nodes/3 init fandomchain.json
+fandom --datadir /fandom/nodes/1 init mainnet.json
+fandom --datadir /fandom/nodes/2 init mainnet.json
+fandom --datadir /fandom/nodes/3 init mainnet.json
 
 ====== INIT & START BOOTNODE ======
 
@@ -71,9 +72,9 @@ bootnode -nodekey ./bootnode.key
 ====== RUN NODES ======
 
 fandom --syncmode "full" \
---datadir $HOME/blockchain/fns/nodes/1 \
+--datadir /fandom/nodes/1 \
 --port 10303 \
---keystore $HOME/blockchain/fns/keystore/1 --password password.txt \
+--keystore /fandom/keystore/1 --password password.txt \
 --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport 1545 --rpcvhosts "*" \
 --rpcapi "db,eth,net,web3,personal,debug" \
@@ -86,9 +87,9 @@ console
 
 
 fandom --syncmode "full" \
---datadir $HOME/blockchain/fns/nodes/2 \
+--datadir /fandom/nodes/2 \
 --port 20303 \
---keystore $HOME/blockchain/fns/keystore/2 --password password.txt \
+--keystore /fandom/keystore/2 --password password.txt \
 --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport 2545 --rpcvhosts "*" \
 --rpcapi "db,eth,net,web3,personal,debug" \
@@ -101,9 +102,9 @@ console
 
 
 fandom --syncmode "full" \
---datadir $HOME/blockchain/fns/nodes/3 \
+--datadir /fandom/nodes/3 \
 --port 30303 \
---keystore $HOME/blockchain/fns/keystore/3 --password password.txt \
+--keystore /fandom/keystore/3 --password password.txt \
 --rpc --rpccorsdomain "*" --rpcaddr 0.0.0.0 \
 --rpcport 3545 --rpcvhosts "*" \
 --rpcapi "db,eth,net,web3,personal,debug" \

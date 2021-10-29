@@ -764,9 +764,11 @@ func (s *Ethereum) ValidateMasternodeTestnet() (bool, error) {
 		return false, fmt.Errorf("Only verify masternode permission in PoSV protocol")
 	}
 	masternodes := []common.Address{
-		common.HexToAddress("0xfFC679Dcdf444D2eEb0491A998E7902B411CcF20"),
-		common.HexToAddress("0xd76fd76F7101811726DCE9E43C2617706a4c45c8"),
-		common.HexToAddress("0x8A97753311aeAFACfd76a68Cf2e2a9808d3e65E8"),
+		common.HexToAddress("0x837246225b555724dd1390e42f36cf229f0008de"),
+		common.HexToAddress("0x61fc6365f02d71413a58fe5ec98ea552b4fe439a"),
+		common.HexToAddress("0x59b2208e57ee1c7cfb8a65f43732f71a38a19411"),
+		common.HexToAddress("0x2f3bfab3bf79ef2a22b8964655f75028fd482c9d"),
+		common.HexToAddress("0x428d430b32a5f10e80060dd6fe6ecce16a1440ad"),
 	}
 	for _, m := range masternodes {
 		if m == eb {
@@ -911,26 +913,26 @@ func GetValidators(bc *core.BlockChain, masternodes []common.Address) ([]byte, e
 func rewardInflation(chainReward *big.Int, number uint64, blockPerYear uint64) *big.Int {
 	// 1st, 2nd year
 	if number < blockPerYear*2 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(128424), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(25684), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 3rd, 4th year
 	if blockPerYear*2 <= number && number < blockPerYear*4 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(85616), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(17122), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 5th, 6th year
 	if blockPerYear*4 <= number && number < blockPerYear*6 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(64212), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(12842), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 7th, 8th year
 	if blockPerYear*6 <= number && number < blockPerYear*8 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(42808), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(8560), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// from the 9th year
-	return new(big.Int).Mul(new(big.Int).SetUint64(21404), new(big.Int).SetUint64(params.Ether))
+	return new(big.Int).Mul(new(big.Int).SetUint64(4280), new(big.Int).SetUint64(params.Ether))
 }
 
 func (s *Ethereum) GetPeer() int {

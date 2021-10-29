@@ -25,8 +25,8 @@ import (
 
 var (
 	FandomMainnetGenesisHash = common.HexToHash("aa142a2ddf5349e90aafadcb4771782a76a478625ac1e5db3eab240ae9a2f39c") // Fandom Mainnet genesis hash to enforce below configs on
-	MainnetGenesisHash     = common.HexToHash("8d13370621558f4ed0da587934473c0404729f28b0ff1d50e5fdd840457a2f17") // Mainnet genesis hash to enforce below configs on
-	TestnetGenesisHash     = common.HexToHash("dffc8ae3b45965404b4fd73ce7f0e13e822ac0fc23ce7e95b42bc5f1e57023a5") // Testnet genesis hash to enforce below configs on
+	MainnetGenesisHash       = common.HexToHash("8d13370621558f4ed0da587934473c0404729f28b0ff1d50e5fdd840457a2f17") // Mainnet genesis hash to enforce below configs on
+	TestnetGenesisHash       = common.HexToHash("dffc8ae3b45965404b4fd73ce7f0e13e822ac0fc23ce7e95b42bc5f1e57023a5") // Testnet genesis hash to enforce below configs on
 )
 
 var (
@@ -42,7 +42,7 @@ var (
 		Posv: &PosvConfig{
 			Period:              3,
 			Epoch:               900,
-			Reward:              128424,
+			Reward:              25684,
 			RewardCheckpoint:    900,
 			Gap:                 5,
 			FoudationWalletAddr: common.HexToAddress("0x0000000000000000000000000000000000000068"),
