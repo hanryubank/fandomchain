@@ -45,10 +45,10 @@ func NewValidator(transactOpts *bind.TransactOpts, contractAddr common.Address, 
 
 func DeployValidator(transactOpts *bind.TransactOpts, contractBackend bind.ContractBackend, validatorAddress []common.Address, caps []*big.Int, ownerAddress common.Address) (common.Address, *Validator, error) {
 	minDeposit := new(big.Int)
-	minDeposit.SetString("10000000000000000000000000", 10)
+	minDeposit.SetString("500000000000000000000000", 10)
 	minVoterCap := new(big.Int)
 	minVoterCap.SetString("10000000000000000000", 10)
-	// Deposit 10M KDC
+	// Deposit 500K KDC
 	// Min Voter Cap 10 KDC
 	// 150 masternodes
 	// Candidate Delay Withdraw 30 days = 864000 blocks

@@ -913,26 +913,26 @@ func GetValidators(bc *core.BlockChain, masternodes []common.Address) ([]byte, e
 func rewardInflation(chainReward *big.Int, number uint64, blockPerYear uint64) *big.Int {
 	// 1st, 2nd year
 	if number < blockPerYear*2 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(25684), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(1284), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 3rd, 4th year
 	if blockPerYear*2 <= number && number < blockPerYear*4 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(17122), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(856), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 5th, 6th year
 	if blockPerYear*4 <= number && number < blockPerYear*6 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(12842), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(642), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// 7th, 8th year
 	if blockPerYear*6 <= number && number < blockPerYear*8 {
-		return new(big.Int).Mul(new(big.Int).SetUint64(8560), new(big.Int).SetUint64(params.Ether))
+		return new(big.Int).Mul(new(big.Int).SetUint64(428), new(big.Int).SetUint64(params.Ether))
 	}
 
 	// from the 9th year
-	return new(big.Int).Mul(new(big.Int).SetUint64(4280), new(big.Int).SetUint64(params.Ether))
+	return new(big.Int).Mul(new(big.Int).SetUint64(214), new(big.Int).SetUint64(params.Ether))
 }
 
 func (s *Ethereum) GetPeer() int {

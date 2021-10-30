@@ -34,22 +34,22 @@ fandom account new \
 b67c637fbf846445852e87ba6d7ee9fe9e974090
 
 ====== GENERATE GENESIS BLOCK ======
-// Deposit 10M KDC (10000000 KDC)
+// Deposit 500K KDC (500000 KDC)
 
-300000000 KDC/year = 10512000 blocks = 11680 epochs
-=> 25684 KDC/epoch
-   
+15000000 KDC/year = 10512000 blocks = 11680 epochs
+=> 1284 KDC/epoch
+
 Year by year reward:
-1st: 25684
-2nd: 25684
-3rd: 17122
-4th: 17122
-5th: 12842
-6th: 12842
-7th: 8560
-8th: 8560
+1st: 1284
+2nd: 1284
+3rd: 856
+4th: 856
+5th: 642
+6th: 642
+7th: 428
+8th: 428
 >=
-9th: 4280
+9th: 214
 
 puppeth
 
