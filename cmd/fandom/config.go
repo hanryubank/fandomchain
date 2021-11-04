@@ -157,7 +157,7 @@ func makeConfigNode(ctx *cli.Context) (*node.Node, fandomConfig) {
 	if ctx.GlobalBool(utils.FandomTestnetFlag.Name) {
 		common.IsTestnet = true
 		common.TRC21IssuerSMC = common.TRC21IssuerSMCTestNet
-		cfg.Eth.NetworkId = 89
+		cfg.Eth.NetworkId = 1222
 	}
 
 	// Check rollback hash exist.
